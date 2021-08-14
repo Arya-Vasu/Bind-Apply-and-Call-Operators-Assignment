@@ -31,6 +31,7 @@ let flyer = {
 };
 
 let run = runner.run.bind(flyer, 10);
+
 run();
 
 ### Output : 
@@ -49,22 +50,32 @@ Use **.call() or .apply()** when you want to invoke the function immediately, an
 ### Example 1 :
 
 const person = {
+
   fullName: function(friend1, friend2) {
+  
     return this.firstName + " " + this.lastName + " " + friend1 + " " + friend2;
+    
   }
+  
 };
 
 const person1 = {
+
   firstName:"Vasu",
+  
   lastName: "Arya"
+  
 };
 
 const person2 = {
+
   firstName:"Karan",
+  
   lastName: "Mahariya"
+  
 };
 
-person.fullName.call(person1, "Raksha Singh", "Aditya Kumar");
+console.log(person.fullName.call(person1, "Raksha Singh", "Aditya Kumar"));
 
 ### Output :
 
@@ -73,22 +84,32 @@ Vasu Arya Raksha Singh Aditya Kumar
 ### Example 2 :
 
 const person = {
+
   fullName: function(friend1, friend2) {
+  
     return this.firstName + " " + this.lastName + " " + friend1 + " " + friend2;
+    
   }
+  
 };
 
 const person1 = {
+
   firstName:"Vasu",
+  
   lastName: "Arya"
+  
 };
 
 const person2 = {
+
   firstName:"Karan",
+  
   lastName: "Mahariya"
+  
 };
 
-person.fullName.apply(person1, ["Raksha Singh", "Aditya Kumar"]);
+console.log(person.fullName.apply(person1, ["Raksha Singh", "Aditya Kumar"]));
 
 ### Output :
 
