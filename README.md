@@ -7,17 +7,27 @@ Use **.bind()** when you want to create a new function and call that function la
 ### Example :
 
 let runner = {
+
     name: 'Vasu Arya'
+    
     run: function(speed) {
+    
         return this.name + 'runs at' + speed + 'mps.';
+        
     }
+    
 };
 
 let flyer = {
+
     name: 'Karan Mahariya'
+    
     run: function(speed) {
+    
         return this.name + 'flies at' + speed + 'mps.';
+        
     }
+    
 };
 
 let run = runner.run.bind(flyer, 10);
@@ -78,7 +88,7 @@ const person2 = {
   lastName: "Mahariya"
 };
 
-person.fullName.call(person1, ["Raksha Singh", "Aditya Kumar"]);
+person.fullName.apply(person1, ["Raksha Singh", "Aditya Kumar"]);
 
 ### Output :
 
